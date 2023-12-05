@@ -9,3 +9,4 @@ Cahier des charges :
 
 DEADLINE -> 11/12
 
+<img alt="schema des pages de l'application" src="https://github.com/jtrognon/AIPE101_JOPythonProject/blob/master/schema.jpg">
