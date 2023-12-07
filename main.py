@@ -2,6 +2,7 @@ import sys
 from PySide6 import QtCore, QtWidgets, QtGui
 from sportChoice import SportChoiceWidget
 from gameSettings import GameSettingsWidget
+from gameScore import GameScoreWidget
 
 
 class MainWindow(QtWidgets.QMainWindow):
@@ -25,14 +26,21 @@ class MainWindow(QtWidgets.QMainWindow):
             self.setCentralWidget(self.centralWidget)
 
             self.grid = QtWidgets.QGridLayout(self.centralWidget)
-
-            
         except:
             print("Ereur lors de la suppression du choix des sports")
 
-        gameSettings = GameSettingsWidget()
-        gameSettings.setSport(sportId)
-        self.grid.addWidget(GameSettingsWidget())
+        self.grid.addWidget(GameSettingsWidget(sportId))
+
+    def choseSettings(self, teams):
+        try:
+            self.centralWidget = QtWidgets.QWidget(self)
+            self.setCentralWidget(self.centralWidget)
+
+            self.grid = QtWidgets.QGridLayout(self.centralWidget)
+        except:
+            print("Ereur lors de la suppression du choix des sports")
+
+        self.grid.addWidget(GameScoreWidget(teams))
 
 
 if __name__ == "__main__":

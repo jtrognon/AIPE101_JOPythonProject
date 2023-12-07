@@ -61,7 +61,6 @@ class SportChoiceWidget(QtWidgets.QWidget):
 
         self.sports = []
         for name in namesList:
-            print(name)
             self.sports.append(QtWidgets.QPushButton(name[0]))
 
 
