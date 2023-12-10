@@ -72,7 +72,7 @@ class SportChoiceWidget(QtWidgets.QWidget):
             self.continueButton.setDisabled(False)
 
         button = self.sender()
-        button.setStyleSheet("QPushButton {background-color: blue;}")
+        button.setStyleSheet("QPushButton {background-color: gray;}")
 
         self.previousChoice = button
 

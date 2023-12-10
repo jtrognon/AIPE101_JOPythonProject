@@ -1,5 +1,7 @@
 Application faite avec Qt6 en python
 
+/!\ Pour lancer le programme il faut avoir PySide6 (pip install pyside6).
+
 Cahier des charges :
 
 - Affichage des points

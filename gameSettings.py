@@ -90,6 +90,7 @@ class GameSettingsWidget(QtWidgets.QWidget):
         # Previous button
         self.previousButton = QtWidgets.QPushButton("Retour")
         self.buttonsLayout.addWidget(self.previousButton)
+        self.previousButton.clicked.connect(self.previousWindow)
 
 
 
@@ -111,8 +112,14 @@ class GameSettingsWidget(QtWidgets.QWidget):
         teamId1 = self.co.execute(f"SELECT Id FROM Teams WHERE Name = '{self.team1DropDown.currentText()}'").fetchall()
         teamId2 = self.co.execute(f"SELECT Id FROM Teams WHERE Name = '{self.team2DropDown.currentText()}'").fetchall()
 
+        if teamId1 != teamId2 :
+            mainWindow = self.parentWidget().parentWidget()
+            mainWindow.choseSettings((self.sportId, int(teamId1[0][0]), int(teamId2[0][0])))
+
+
+    def previousWindow(self):
         mainWindow = self.parentWidget().parentWidget()
-        mainWindow.choseSettings((self.sportId, int(teamId1[0][0]), int(teamId2[0][0])))
+        mainWindow.previousSettings()
 
 
 if __name__ == "__main__":
