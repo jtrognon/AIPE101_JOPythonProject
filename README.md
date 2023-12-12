@@ -36,8 +36,8 @@ Non fait :
 - Documentation qui explique le fonctionnement de l'app.
 
 À retenir :
-- Utilisation de Qt fastidieuse \\
-  -> Utiliser des classes pour limiter la répétition \\
-  -> Utiliser JS/HTML/CSS à la place \\
+- Utilisation de Qt fastidieuse </br>
+  -> Utiliser des classes pour limiter la répétition </br>
+  -> Utiliser JS/HTML/CSS à la place </br>
 - Mieux prévoir l'implémentation du score en fonction des sports car format très différent suivant les sports
  
