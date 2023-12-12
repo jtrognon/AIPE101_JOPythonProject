@@ -6,8 +6,8 @@ class GameSettingsWidget(QtWidgets.QWidget):
         super().__init__()
 
         # Properties
-        self.width = 300
-        self.height = 200
+        self.width = 600
+        self.height = 400
         self.setFixedSize(self.width, self.height)
 
         # Connect to DB
@@ -27,6 +27,7 @@ class GameSettingsWidget(QtWidgets.QWidget):
         self.sportLabel = QtWidgets.QLabel("")
         self.sportId = sportId
         self.setSport()
+        self.sportLabel.setFont(QtGui.QFont("Arial", 20))
         self.sportLayout.addWidget(self.sportLabel, alignment=QtCore.Qt.AlignmentFlag.AlignCenter)
 
         # ---- Teams layouts ----
@@ -36,7 +37,14 @@ class GameSettingsWidget(QtWidgets.QWidget):
 
         # TeamsLabel
         self.teamsLabel = QtWidgets.QLabel("Choisissez votre équipe : ")
-        self.primaryTeamsLayout.addWidget(self.teamsLabel)
+        self.primaryTeamsLayout.addWidget(self.teamsLabel, alignment=QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.teamsLabel.setFixedSize(450, 60)
+        self.teamsLabel.setFont(QtGui.QFont("Arial", 30))
+
+        # TeamsBottomSpace
+        self.teamsBottomSpace = QtWidgets.QWidget()
+        self.primaryTeamsLayout.addWidget(self.teamsBottomSpace)
+        self.teamsBottomSpace.setFixedSize(50, 25)
 
         # Secondary teams layout
         self.secondaryTeamsLayout = QtWidgets.QVBoxLayout(self)
@@ -52,11 +60,15 @@ class GameSettingsWidget(QtWidgets.QWidget):
         self.team1Label = QtWidgets.QLabel("Équipe 1 : ")
         self.team1Label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.team1Layout.addWidget(self.team1Label)
+        self.team1Label.setFixedSize(200, 40)
+        self.team1Label.setFont(QtGui.QFont("Arial", 20))
 
         # Team1 DropDown
         self.team1DropDown = QtWidgets.QComboBox()
         self.team1DropDown.setFixedWidth(150)
         self.team1Layout.addWidget(self.team1DropDown)
+        self.team1DropDown.setFixedSize(200, 40)
+        self.team1DropDown.setFont(QtGui.QFont("Arial", 20))
 
         # ---- Team 2 ----
         # Team 2 layout
@@ -67,11 +79,15 @@ class GameSettingsWidget(QtWidgets.QWidget):
         self.team2Label = QtWidgets.QLabel("Équipe 2 : ")
         self.team2Label.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.team2Layout.addWidget(self.team2Label)
+        self.team2Label.setFixedSize(200, 40)
+        self.team2Label.setFont(QtGui.QFont("Arial", 20))
 
         # Team2 DropDown
         self.team2DropDown = QtWidgets.QComboBox()
         self.team2DropDown.setFixedWidth(150)
         self.team2Layout.addWidget(self.team2DropDown)
+        self.team2DropDown.setFixedSize(200, 40)
+        self.team2DropDown.setFont(QtGui.QFont("Arial", 20))
 
         # Team choice
         self.getTeams()

@@ -151,13 +151,13 @@ class GameScoreWidget(QtWidgets.QWidget):
         self.team1GlobalPointsManagementLayout.addLayout(self.team1PointsManagementLayout)
 
         # Add points to first team button
-        self.addScoreT1Button = QtWidgets.QPushButton(f"Ajouter 1 point à {self.team1Name}")
+        self.addScoreT1Button = QtWidgets.QPushButton(f"Ajout de points pour {self.team1Name}")
         self.team1PointsManagementLayout.addWidget(self.addScoreT1Button)
         self.addScoreT1Button.setFixedWidth(200)
         self.addScoreT1Button.clicked.connect(self.addSubstractScore)
 
         # Remove points to first team button
-        self.substractScoreT1Button = QtWidgets.QPushButton(f"Enlever 1 point à {self.team1Name}")
+        self.substractScoreT1Button = QtWidgets.QPushButton(f"Retrait de points pour {self.team1Name}")
         self.team1PointsManagementLayout.addWidget(self.substractScoreT1Button)
         self.substractScoreT1Button.setFixedWidth(200)
         self.substractScoreT1Button.clicked.connect(self.addSubstractScore)
@@ -178,13 +178,13 @@ class GameScoreWidget(QtWidgets.QWidget):
         self.team2GlobalPointsManagementLayout.addLayout(self.team2PointsManagementLayout)
 
         # Add points to second team button
-        self.addScoreT2Button = QtWidgets.QPushButton(f"Ajouter 1 point à {self.team2Name}")
+        self.addScoreT2Button = QtWidgets.QPushButton(f"Ajout de points pour {self.team2Name}")
         self.team2PointsManagementLayout.addWidget(self.addScoreT2Button)
         self.addScoreT2Button.setFixedWidth(200)
         self.addScoreT2Button.clicked.connect(self.addSubstractScore)
 
         # Remove points to second team button
-        self.substractScoreT2Button = QtWidgets.QPushButton(f"Enlever 1 point à {self.team2Name}")
+        self.substractScoreT2Button = QtWidgets.QPushButton(f"Retrait de points pour {self.team2Name}")
         self.team2PointsManagementLayout.addWidget(self.substractScoreT2Button)
         self.substractScoreT2Button.setFixedWidth(200)
         self.substractScoreT2Button.clicked.connect(self.addSubstractScore)
@@ -262,9 +262,10 @@ class GameScoreWidget(QtWidgets.QWidget):
         :return: None
         """
         buttonText = self.sender().text()
-        if len(buttonText) == 18 + len(self.team1Name): # Team 1
+        if len(buttonText) == 21 + len(self.team1Name): # Team 1
             team = 1
         else: # Team 2
+            print(len(buttonText), 21 + len(self.team1Name))
             team = 2
 
         if buttonText[0] == 'A':
